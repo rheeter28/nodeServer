@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fullstack Starter</title>
+    <!--1-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Full Stack Starter</h1>
+        <p>This app is meant as a guide for learning how to use HTTP with Fetch calls to an Express API using Sequelize and Postgres.
+            Some methods print to the console and some produce material in the DOM. Either way, these chunks of code are
+            meant to be a guide when working with the DOM and data for a homespun Express server.</p>
+
+        <!--2-->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Step</th>
+                    <th scope="col">Endpoint</th>
+                    <th scope="col">Action</th>
+                    <th scope="col">Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>GET
+                        <code>/test/helloclient</code>
+                    </td>
+                    <td>
+                        <button onclick="fetchHelloDataFromAPI();">Hello Client</button>
+                    </td>
+                    <td>See Console</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>POST 
+                        <code>/test/one</code>
+                    </td>
+                    <td>
+                        <button onclick="postToOne();">POST to /one</button>
+                    </td>
+                    <td>See Console</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>POST (arrow function)
+                        <code>/test/one</code>
+                    </td>
+                    <td>
+                        <button onclick="postToOneArrow();">POST to /one</button>
+                    </td>
+                    <td>See Console</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>POST Data
+                        <code>/test/seven</code>
+                    </td>
+                    <td>
+                        <button onclick="postData();">Post</button>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                <bold>Posted data:</bold>
+                                <span id="test-data"></span>
+                            </li>
+                            <li>
+                                <bold>At:</bold>
+                                <span id="created-at"></span>
+                                </p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>            
+                <tr>
+                    <th scope="row">5</th>
+                    <td>GET and display json
+                        <code>/test/one</code>
+                    </td>
+                    <td>
+                        <button onclick="fetchFromOneDisplayData();">Display data</button>
+                    </td>
+                    <td>
+                        <ul id="getjson">
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--3-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+    <script src="01-scripts.js"></script>
+</body>
+
+</html>
