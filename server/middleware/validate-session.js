@@ -7,7 +7,7 @@ var User = sequelize.import('../models/user');
 
 module.exports = function(req, res, next){
   if(req.method == 'OPTIONS'){
-    next()
+   next()
   } else {
     var sessionToken = req.headers.authorization; //1 sessionToken is created to hold token that has been pulled from the authorization header
     console.log(sessionToken)//2  the token is printed to the console, this is for debugging purposes to make sure that the token is being sent to the server.IT SHOULD NOT BE LEFT IN THE FINAL CODE
@@ -23,9 +23,9 @@ module.exports = function(req, res, next){
             res.status(401).send({error: 'Not authorized'});
           });
         } else { //9 if no value for "decoded", and err message is thrown.
-           res.status(400).send({ error: 'Not authorized!'});
+           res.status(400).send({ error: 'No can do bud!'});
         }
       });
     }
-  }
+   }
 }

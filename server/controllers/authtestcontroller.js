@@ -1,13 +1,13 @@
 var router = require('express').Router();
 var sequelize = require('../db');
-var User = sequelize.import('../models/user');
+var User = require('../models/user')(sequelize, require("sequelize"));
 var AuthTestModel = sequelize.import('../models/authtest');
 
 /*************************
  *  GET ALL ITEMS FOR INDIVIDUAL USER
  **********************/
 
- router.get('/getall', function (reg, res){
+ router.get('/getall', function (req, res){
    var userid = req.user.id;
 
    AuthTestModel

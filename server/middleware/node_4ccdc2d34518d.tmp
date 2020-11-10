@@ -4,9 +4,9 @@ var User = sequelize.import('../models/user');
 
 
 module.exports = function(req, res, next){
-  if(req.method == 'OPTIONS'){
-    next()
-  } else {
+  //if(req.method == 'OPTIONS'){
+  //  next()
+  //} else {
     var sessionToken = req.headers.authorization; //1 
     console.log(sessionToken)//2
     if(!sessionToken) return res.status(403).send({auth: false , message: 'No token provided.'});//3
@@ -25,5 +25,5 @@ module.exports = function(req, res, next){
         }
       });
     }
-  }
+ // }
 }

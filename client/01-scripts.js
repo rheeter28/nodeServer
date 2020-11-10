@@ -46,8 +46,8 @@ fetch(url, {
 /********************** 
 * 3 POST /one : Arrow Function
 ***********************/
-function postToOneArrow(){
-  var url = 'http://localhost3001/test/one';
+function postToOneArrow() {
+  var url = 'http://localhost:3001/test/one';
 
   fetch(url, {           
     method: 'POST',     //1 Were reaching out to an endpoint woth a POST request. We add the appropriate headers.
@@ -86,14 +86,14 @@ fetch('http://localhost:3001/test/seven', {
 }
   
 /**********************
- * 4 GET: .ONE - Display Data
+ * 4 GET: ONE - Display Data
  ************************/
 function fetchFromOneDisplayData(){
   //1 We set up our URL in one variables and target the "data-one" id in the DOM in another one
   let url = 'http://localhost:3001/test/one';
   let dataView = document.getElementById('display-one');
 
-  //2 We creata a "fetch()" with "Headers" and the request method of "GET". There are lso chained promises that handle the data whenit returnd or handle an error if one comes back
+  //2 We creata a "fetch()" with "Headers" and the request method of "GET". There are also chained promises that handle the data when it returns or handle an error if one comes back
   fetch(url, {
     method: 'GET',
     headers: new Headers({
@@ -103,20 +103,20 @@ function fetchFromOneDisplayData(){
     function(response){
       return response.json()
     })
-    .then(
+  .catch(
       function(error){
-        console.error('Error:', error)
+        console.error('error:', error)
       })
-    .then(
+  .then(
       function(results){
-      let mylist = document.querySelector('#getjson'); //3 Inside the ".then()", we are going to work towards shodiwng the returnded data in the DOM. We start by tarteding the "getjson" id in the DOM and attaching the value to the myList variable.
+      let myList = document.querySelector('#getjson'); //3 Inside the ".then()", we are going to work towards shodiwng the returnded data in the DOM. We start by tarteding the "getjson" id in the DOM and attaching the value to the myList variable.
       
       for(r of results){ //4 We set a "for of" loop
         console.log('Response:', r.testdata);//5 We write a "console.log()" statement to show how we van access the valuses tahat come backt in the object inside the response.
         var listItem = document.createElement('li');//6 We create another variable called "listItem". The "createElement()" method will create that type of element ind the DOM. In this case, we creat a list item,, "li", every time we iterate
         listItem.innerHTML = r.testdata; //7 Wach time we inerate, we store the value of "r.testdata" in the newly created "li"
-        mylist.appendChild(listItem);//8 We call "appendChild()" on "myList", which means that each time we iterate we put the "li" into the unordered list
+        myList.appendChild(listItem);//8 We call "appendChild()" on "myList", which means that each time we iterate we put the "li" into the unordered list
       }
-   })
+  })
 }
 
